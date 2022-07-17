@@ -8,37 +8,194 @@
   
   <title>Frontend Mentor | E-commerce product page</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+   <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <!--fontawesome-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+  <script src="cart.js" async></script>
 </head>
 <body>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+  <header>
+    <div id="myTopnav" class="topnav">
+      <div class="nav-main">
+        <span onclick="openNav()" class="openBtn"><img src="images/icon-menu.svg"  alt="hamburger image"></span>
+        <div class="nav-logo">
+          <img src="images/logo.svg" alt="">
+        </div>
+        <div class="overlay" id="myNav">
+          <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()"><img src="images/icon-close.svg" alt="close icon"></a>
+          <div class="nav-links"> 
+            <a class="navlink" href="#">Collections</a>
+            <a class="navlink" href="#">Men</a>
+            <a class="navlink" href="#">Women</a>
+            <a class="navlink" href="#">About</a>
+            <a class="navlink" href="#">Contact</a>
+          </div>
+        </div>
+      </div>
 
-  Sneaker Company
+      <div class="nav-cart">
+        <a href="javascript:void(0)" class="cartBtn" onclick="openCart()"><img src="images/icon-cart.svg" class="cart-icon" alt=""></a>
+        <img src="images/image-avatar.png" class="avatar" alt="">
+      </div>
+    </div>
+    <div id="basket">
+      <div class="basket-main shadow">
+        <p class="title font-weight-bold">Cart</p>
+        
+        <!--<div class="empty-basket">
+          <p class="font-weight-bold">Your cart is empty</p>
+        </div> -->
+        <div class="basket-product">
+          <div class="empty-basket"></div>
+          <div class="basket-item"></div>
+          <button type="submit" class="checkout">Checkout</button>
+        </div>
+      </div>
+      
+    </div>
+  </header>
+  <div class="box"></div>
+  <main id="main">
+    <section id="products">
+      <div class="slideshow">
+        <div class="mySlides">
+          <img src="images/image-product-1.jpg" onclick="openModal();currentSlide(1)">
+        </div>
+      
+        <div class="mySlides">
+          <img src="images/image-product-2.jpg" onclick="openModal();currentSlide(2)">
+        </div>
+      
+        <div class="mySlides">
+          <img src="images/image-product-3.jpg" onclick="openModal();currentSlide(3)">
+        </div>
+      
+        <div class="mySlides">
+          <img src="images/image-product-4.jpg" onclick="openModal();currentSlide(4)">
+        </div>
 
-  Fall Limited Edition Sneakers
+        <a class="prev" onclick="plusSlides(-1)"><img src="images/icon-previous.svg" alt=""></a>
+        <a class="next" onclick="plusSlides(1)"><img src="images/icon-next.svg" alt=""></a>
 
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
+        <div class="thumbnail-wrapper row">
+          <div class="thumbnail-item col-md-3">
+            <img class="thumbnail  product1 active" src="images/image-product-1-thumbnail.jpg" onclick="currentSlide(1)" alt="">
+          </div>
+          <div class="thumbnail-item col-md-3">
+            <img class="thumbnail" src="images/image-product-2-thumbnail.jpg" onclick="currentSlide(2)" alt="">
+          </div>
+          <div class="thumbnail-item col-md-3">
+            <img class="thumbnail" src="images/image-product-3-thumbnail.jpg" onclick="currentSlide(3)" alt="">
+          </div>
+          <div class="thumbnail-item col-md-3">
+            <img class="thumbnail" src="images/image-product-4-thumbnail.jpg" onclick="currentSlide(4)" alt="">
+          </div>
+        </div>
 
-  $125.00
-  50%
-  $250.00
+      </div> <!--end of slide show-->
+      <div id="myModal" class="modal">
+        
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()"><i class="fas fa-times"></i></span>
+          <div class="modalSlides">
+            <img src="images/image-product-1.jpg">
+          </div>
+        
+          <div class="modalSlides">
+            <img src="images/image-product-2.jpg">
+          </div>
+        
+          <div class="modalSlides">
+            <img src="images/image-product-3.jpg">
+          </div>
+        
+          <div class="modalSlides">
+            <img src="images/image-product-4.jpg">
+          </div>
 
-  0
-  Add to cart
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+          <div class="thumbnail-wrapper row">
+            <div class="col-md-3">
+              <div class="thumbnail-item ">
+                <img class="thumbnail modalThumbnail active" src="images/image-product-1-thumbnail.jpg" onclick="currentSlide(1)" alt="">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail-item">
+                <img class="thumbnail modalThumbnail" src="images/image-product-2-thumbnail.jpg" onclick="currentSlide(2)" alt="">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail-item">
+                <img class="thumbnail modalThumbnail" src="images/image-product-3-thumbnail.jpg" onclick="currentSlide(3)" alt="">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail-item">
+                <img class="thumbnail modalThumbnail" src="images/image-product-4-thumbnail.jpg" onclick="currentSlide(4)" alt="">
+              </div>
+            </div>
+            
+            
+          </div> <!--end of modal thumbnails-->
+        </div> <!--end of modal content-->
+      </div> <!--end of my modal div-->
+    </section>
+
+    <section id="product-description">
+      <div class="product-text">
+        <p class="orange uppercase font-weight-bolder">Sneaker Company</p>
+        <h1 class="pb-3 productTitle">Fall Limited Edition Sneakers</h1>
+        <p class="grey">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+      </div>
+      <div class="product-numbers pt-3">
+        <div class="price">
+          <div class="new-price">
+            <p class="font-weight-bolder itemPrice" id="price">$125.00 </p>
+            <span class="discount font-weight-bolder ml-2">50%</span> 
+          </div>
+          
+          <p class="old-price font-weight-bolder">$250.00</p>
+          
+        </div>
+        <div class="lg-flex">
+          <div class="quantity">
+            <button id="reduceQty"><img src="images/icon-minus.svg" alt=""></button>
+            <p class="font-weight-bolder" id="qty"></p>
+            <button id="addQty"><img src="images/icon-plus.svg" alt=""></button>
+          </div>
+          <div class="cart-btn">
+            <button class="add-to-cart font-weight-bold" id="addtoCart"><img class="pr-3" src="images/icon-cart-btn.svg" alt=""> Add to Cart</button>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+  </main>
   
-  <div class="attribution">
+  
+  <div class="attribution pb-5">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+
+  <script src="control.js"></script>
+  <script src="nav.js"></script>
+  <!--<script src="cart.js"></script>-->
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
