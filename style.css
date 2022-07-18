@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans');
+
 :root {
 	--Orange: hsl(26, 100%, 55%);
 	--Paleorange: hsl(25, 100%, 94%);
@@ -30,6 +32,7 @@ body {
 	min-height: 100vh;	
 	overflow-x: hidden;
 	font-size: 16px;
+	font-family: 'Kumbh Sans', sans-serif;
 }
 
 img, picture {
@@ -61,6 +64,9 @@ button {
 	justify-content: space-between;
 	width: 100%;
 	z-index: 1;
+}
+.topnav .navlink {
+	font-size: bolder;
 }
 a.icon {
 	display: none;

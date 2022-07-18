@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/Samuel-jacobs/e-commerce](https://github.com/Samuel-jacobs/e-commerce)
+- Live Site URL: [https://samuel-jacobs.github.io/e-commerce/](https://samuel-jacobs.github.io/e-commerce/)
 
 ## My process
 
@@ -89,7 +89,7 @@ I intend to build alot more javascript project and then move to react
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
+
 - Frontend Mentor - [@samueljacobs](https://www.frontendmentor.io/profile/samueljacobs)
 - Twitter - [@_samueljacobs_](https://www.twitter.com/_samueljacobs_)
 
@@ -97,6 +97,6 @@ I intend to build alot more javascript project and then move to react
 
 ## Acknowledgments
 
-I would like to thank webdev simplified on youtube. His video on cart helped me figure out how to get the adding to cart functionality to work.
+I would like to thank webdev simplified on youtube. His add to cart video helped me figure out how to get the adding to cart functionality to work.
 
 
