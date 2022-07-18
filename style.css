@@ -66,7 +66,7 @@ button {
 	z-index: 1;
 }
 .topnav .navlink {
-	font-size: bolder;
+	font-weight: bolder;
 }
 a.icon {
 	display: none;
@@ -82,6 +82,7 @@ a.icon {
 }
 .avatar:hover {
 	border: 1px solid var(--Orange);
+	border-radius: 50%;
 }
 .cart-btn {
 	align-self: center;
@@ -309,6 +310,10 @@ button.add-to-cart:hover {
 		width: 85%;
 		margin-inline: auto;
 	}
+	.avatar {
+		width: 50px;
+		height: 50px;
+	}
 	.navlink {
 		display: inline-block;
 		color: var(--Darkgrayishblue);
@@ -359,7 +364,7 @@ button.add-to-cart:hover {
 	}
 	.cartBtn {
 		margin-right: 30px;
-		
+		align-self: center;
 	}
 
 	#main {
