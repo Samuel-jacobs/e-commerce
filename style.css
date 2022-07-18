@@ -80,6 +80,9 @@ a.icon {
 	width: 30px;
 	margin-left: 10px;
 }
+.avatar:hover {
+	border: 1px solid var(--Orange);
+}
 .cart-btn {
 	align-self: center;
 }
@@ -178,6 +181,7 @@ a.icon {
 	font-size: 1.5rem;
 	display: flex;
 }
+
 .discount {
 	background-color: var(--Paleorange);
 	color: var(--Orange);
@@ -215,6 +219,10 @@ button.add-to-cart {
 	color: white;
 	padding: 10px;
 	border-radius: 10px;
+}
+button.add-to-cart:hover {
+	box-shadow: 0 4px 8px 0 rgb(255, 125, 26, 0.2), 0 6px 20px 0 rgb(255, 125, 26, 0.2);
+	filter: brightness(130%);
 }
 
 @media screen and (max-width: 768px) {
